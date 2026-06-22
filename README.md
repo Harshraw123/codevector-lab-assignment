@@ -6,7 +6,7 @@ Small Node.js backend for browsing ~200,000 products with category filtering and
 
 ---
 
-## Design decisions (for the interview)
+## Design decisions 
 
 ### 1. Keyset pagination, not OFFSET
 
