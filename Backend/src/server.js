@@ -8,7 +8,16 @@ import "dotenv/config";
 
 const app = express();
 
-app.use(cors()); // allow the frontend (different origin) to call this API
+const allowedOrigins = [
+  "https://codevector-lab-assignment.vercel.app",
+  process.env.FRONTEND_URL,
+].filter(Boolean);
+
+app.use(
+  cors({
+    origin: allowedOrigins.length > 0 ? allowedOrigins : true,
+  })
+);
 app.use(express.json());
 
 app.get("/", (req, res) => {

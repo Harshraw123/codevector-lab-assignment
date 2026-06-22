@@ -72,14 +72,25 @@ GET /products?limit=20&category=electronics&snapshot=2025-06-22T10:00:00.000Z&cu
 
 
 
-## Deploy (Render + Neon)
+## Live URLs
+
+| Service | URL |
+|---|---|
+| Frontend | https://codevector-lab-assignment.vercel.app |
+| Backend API | https://codevector-lab-assignment.onrender.com |
+
+---
+
+## Deploy (Render + Neon + Vercel)
 
 1. Create a Neon project, copy `DATABASE_URL`.
 2. Locally: `npm run db:push && npm run seed`.
 3. On Render: Web Service → connect repo → root directory `Backend`.
    - Build: `npm install`
    - Start: `npm start`
-   - Env: `DATABASE_URL`, `PORT` (Render sets PORT automatically).
+   - Env: `DATABASE_URL`, `FRONTEND_URL=https://codevector-lab-assignment.vercel.app` (`PORT` is set by Render).
+4. On Vercel: connect repo → root directory `Frontend`.
+   - Env: `VITE_API_URL=https://codevector-lab-assignment.onrender.com`
 
 ---
 

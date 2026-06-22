@@ -4,6 +4,7 @@ import { CategoryFilter } from "@/components/category-filter";
 import { ProductGrid } from "@/components/product-grid";
 
 const PAGE_SIZE = 20;
+const API_BASE = import.meta.env.VITE_API_URL || "/api";
 
 export default function App() {
   const [category, setCategory] = useState("");
@@ -31,7 +32,7 @@ export default function App() {
       if (!reset && cursor) params.set("cursor", cursor);
       if (!reset && snapshot) params.set("snapshot", snapshot);
 
-      const res = await fetch(`/api/products?${params.toString()}`);
+      const res = await fetch(`${API_BASE}/products?${params.toString()}`);
       if (!res.ok) throw new Error(`Request failed: ${res.status}`);
 
       const json = await res.json();

@@ -85,6 +85,15 @@ Postgres walks the index instead of sorting the full table.
 
 ---
 
+## Live URLs
+
+| Service | URL |
+|---|---|
+| Frontend | https://codevector-lab-assignment.vercel.app |
+| Backend API | https://codevector-lab-assignment.onrender.com |
+
+---
+
 ## Deploy (Render + Neon)
 
 1. Create a Neon project, copy `DATABASE_URL`.
@@ -92,7 +101,7 @@ Postgres walks the index instead of sorting the full table.
 3. On Render: Web Service → connect repo → root directory `Backend`.
    - Build: `npm install`
    - Start: `npm start`
-   - Env: `DATABASE_URL`, `PORT` (Render sets PORT automatically).
+   - Env: `DATABASE_URL`, `FRONTEND_URL=https://codevector-lab-assignment.vercel.app` (`PORT` is set by Render).
 
 ---
 

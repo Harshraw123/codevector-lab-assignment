@@ -1,8 +1,13 @@
 {
-    "rewrites": [
-      {
-        "source": "/(.*)",
-        "destination": "/index.html"
-      }
-    ]
-  }
+  "build": {
+    "env": {
+      "VITE_API_URL": "https://codevector-lab-assignment.onrender.com"
+    }
+  },
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}
